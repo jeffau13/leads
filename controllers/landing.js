@@ -13,8 +13,19 @@ exports.submit_lead = function (req, res, next) {
   })
 
 };
+//renders list of lead
 exports.show_leads = function (req, res, next) {
-  models.Lead.findAll().then(leads =>{
+  return models.Lead.findAll().then(leads =>{
     res.render('landing', { title: 'Express' , leads: leads});
   })
+};
+//render individual lead from database query:
+exports.show_lead = function (req, res, next) {
+  return models.Lead.findOne({
+    where: {
+      id : req.params.lead_id
+    }
+  }).then(lead => {
+    res.render('lead',{lead:lead});
+  })  
 };
