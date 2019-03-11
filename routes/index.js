@@ -12,4 +12,5 @@ router.get('/lead/:lead_id/edit', landing.show_edit_lead);
 //submits form of lead edit:
 router.post('/lead/:lead_id/edit', landing.edit_lead);
 router.post('/lead/:lead_id/delete', landing.delete_lead);
+router.post('/lead/:lead_id/delete-json', landing.delete_lead_json);
 module.exports = router;
