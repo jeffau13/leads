@@ -14,6 +14,10 @@ router.get('/signup',user.show_signup);
 //POST for login/signup
 router.post('/login',user.login);
 router.post('/signup', user.signup);
+//POST logout route
+router.post('/logout',user.logout);
+router.get('/logout', user.logout);
+
 
 router.get('/leads', landing.show_leads);
 router.get('/lead/:lead_id', landing.show_lead);
